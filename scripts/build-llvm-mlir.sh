@@ -11,12 +11,12 @@ ARGS=(
   -DLLVM_ENABLE_LLD=ON
 
   # CCache can drastically speed up further rebuilds, try adding:
-  -DLLVM_CCACHE_BUILD=ON
+  #-DLLVM_CCACHE_BUILD=ON
   -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
 
 )
 
-LLVM_DIR=$HOME/code/llvm-project/llvm
+LLVM_DIR=/work/git_repo/llvm-project/llvm
 MLIR_BUILD_DIR=${LLVM_DIR}/../build-mlir/
 cmake -G Ninja -S ${LLVM_DIR} -B ${MLIR_BUILD_DIR} "${ARGS[@]}"
 cmake --build ${MLIR_BUILD_DIR} --target check-mlir

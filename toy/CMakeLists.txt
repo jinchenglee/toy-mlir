@@ -17,6 +17,7 @@ mlir_tablegen(ShapeInferenceOpInterfaces.h.inc -gen-op-interface-decls)
 mlir_tablegen(ShapeInferenceOpInterfaces.cpp.inc -gen-op-interface-defs)
 add_public_tablegen_target(ShapeInferenceInterfaceIncGen)
 
+include_directories(${CMAKE_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/include/)
 
